@@ -10,11 +10,16 @@ public class MutableVector {
 
   private final double[] elements;
 
-  private MutableVector(double x, double y) {
+  public MutableVector(double x, double y) {
     elements = new double[2];
     elements[0] = x;
     elements[1] = y;
+  }
 
+  public MutableVector() {
+    elements = new double[2];
+    elements[0] = 0;
+    elements[1] = 0;
   }
 
   public static MutableVector of(double x, double y) {
@@ -84,6 +89,22 @@ public class MutableVector {
   public MutableVector clear(){
     elements[0] = 0;
     elements[1] = 0;
+    return this;
+  }
+
+  public MutableVector set(double x, double y){
+    elements[0] = x;
+    elements[1] = y;
+    return this;
+  }
+
+  public MutableVector setX(double x){
+    elements[0] = x;
+    return this;
+  }
+
+  public MutableVector setY(double y){
+    elements[1] = y;
     return this;
   }
 
